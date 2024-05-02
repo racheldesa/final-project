@@ -66,7 +66,7 @@ app.get("/course2/:id", async (req,res) => {
     }
 });
 
-// Route to get all grades from all students for course1
+// Route to get all grades from all students for course3
 app.get("/course3", async (req,res) => {
     try {
         const query = "SELECT * FROM course3";
@@ -78,7 +78,7 @@ app.get("/course3", async (req,res) => {
     }
 });
 
-// Fetch grades for course 1 by student ID
+// Fetch grades for course 3 by student ID
 app.get("/course3/:id", async (req,res) => {
     try {
         // Read id from frontend
