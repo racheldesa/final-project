@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Homepage from './Homepage';
+import AllCourses from './AllCourses';
+import Grades from './Grades';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-
+    <Homepage />
+    <AllCourses />
+    <Grades />
   </React.StrictMode>
 );
 
