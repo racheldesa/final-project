@@ -19,7 +19,7 @@ code {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #cd1818;
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -28,7 +28,7 @@ code {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #ffca03;
   display: block;
 }
 
@@ -47,6 +47,6 @@ code {
   .sidenav a {font-size: 18px;}
 }
 
-#root {
+#main-container {
   padding-left: 180px;
 }
