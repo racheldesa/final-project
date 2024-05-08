@@ -52,9 +52,28 @@ code {
 }
 
 #main-container {
-  padding-left: 180px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 #root {
   padding-left: 180px;
+}
+
+h1 {
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+h2 {
+  padding-bottom: 20px;
+}
+
+.course-container {
+  margin-bottom: 10px;
+}
+.card.shadow-sm {
+  border-radius: 30px;
+  border-color: #cd1818;
 }
