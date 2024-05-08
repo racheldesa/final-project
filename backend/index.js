@@ -104,3 +104,14 @@ app.get("/course3/:id", async (req,res) => {
         res.status(500).send({ error: 'An error occurred while fetching items.' });
     }
 });
+
+// Fetch all course grades (course1, course2, course3) by student ID 
+// app.get("/:id", async (req,res) => {
+//     try {
+//         const id = req.params.id;
+//         const query = "SELECT FROM course1"
+//     } catch (err) {
+//         console.error("Error in reading MySQL: ", err);
+//         res.status(500).send({ error: 'An error occurred while fetching items.' });
+//     }
+// })

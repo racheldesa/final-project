@@ -24,9 +24,41 @@ function Grades() {
         );
     } // end GetID()
 
+    function DisplayGrades() {
+        fetch(`http://localhost:4000/course1/${dataF.stuID}`)
+            .then(response => response.json())
+            .then(grades => loadCourse1(grades));
+
+        function loadCourse1(grades) {
+            var mainContainer = document.getElementById("main-container");
+            console.log(grades);    // test - log response to console
+        }
+        return (
+            <div>
+                <h1>Grades for Student ID: {dataF.stuID}</h1>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Course 1
+                        </button>
+                    </div> <br/>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Course 2
+                        </button>
+                    </div> <br/>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Course 3
+                        </button>
+                    </div>
+            </div>
+        );
+    }
+
     return (
         <div>
             {viewer===0 && <GetID />}
+            {viewer===1 && <DisplayGrades />}
         </div>
     );
 }

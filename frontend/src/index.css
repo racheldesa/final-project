@@ -41,6 +41,10 @@ code {
   padding: 0px 10px;
 }
 
+.btn-group {
+  padding: 10px;
+}
+
 /* Adjustment for smaller screens */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
