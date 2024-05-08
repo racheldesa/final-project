@@ -1,11 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useCourseFavorites } from "./useCourseFavorites";
 
 function AllCourses() {
-    fetch("http://localhost:4000/catalog")
-        .then(response => response.json())
-        .then(catalog => loadCourses(catalog));
+    const [isLoading, setIsLoading] = useState(true);
+    const [favorites, addToFavorites] = useCourseFavorites([]);
 
+    const handleClick = (courseID) => {
+        addToFavorites(courseID);
+        console.log("Course ID added.")
+    }
+    useEffect(() => {
+        const fetchData =async () => {
+            setIsLoading(true);
+            fetch("http://localhost:4000/catalog")
+            .then(response => response.json())
+            .then(catalog => loadCourses(catalog));
+            setIsLoading(false);
+        }
+        fetchData();
+
+        return () => {
+        };
+    }, []);
+
+    
     function loadCourses(catalog) {
         var mainContainer = document.getElementById("main-container");
         for (let course of catalog) {
@@ -24,7 +43,7 @@ function AllCourses() {
                         <p class="card-text">Professor: ${catalog[i].professor}</p>
                         <p class="card-text">Credits: ${catalog[i].credits}</p>
                         <p class="card-text">${catalog[i]. courseTag} | ${catalog[i]. sessions}</p>
-                        <button type="button">Favorite</button>
+                        <button type="button" onClick={${handleClick(catalog[i].id)}}>Favorite</button>
                     </div>
                 </div>`;
 

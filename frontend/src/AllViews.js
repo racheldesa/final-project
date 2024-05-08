@@ -13,6 +13,7 @@ export function AllViews() {
     const gradesPageBtn = document.getElementById("gradespageBtn");
     const logo = document.getElementById("pageLogo");
 
+
     homePageBtn.addEventListener("click", function () {
         setHomeView(true);
         setAllCoursesView(false);
