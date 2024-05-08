@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Grades from "./Grades";
 import AllCourses from "./AllCourses";
+import Home from "./Homepage";
 
 export function AllViews() {
     const [homeView, setHomeView] = useState(true);
@@ -32,14 +33,6 @@ export function AllViews() {
         setAllCoursesView(false);
         setGradesView(false);
     });
-
-    function Home() {
-        return (
-            <div>
-                <h1>This is the homepage.</h1>
-            </div>
-        )
-    }
 
     return (
         <div>

@@ -24,6 +24,18 @@ app.get("/catalog", async (req,res) => {
     }
 });
 
+// Fetch course info by course ID
+app.get("/catalog/:id", async (req,res) => {
+    try {
+        const query = "SELECT * FROM catalog WHERE id = ?";
+        const [result] = await db.query(query);
+        res.status(200).send(result);
+    } catch (err) {
+        console.error("Error in Reading MySQL: ", err);
+        res.status(500).send({ error: 'An error occurred while fetching items.'});
+    }
+});
+
 // Route to get all grades from all students for course1
 app.get("/course1", async (req,res) => {
     try {

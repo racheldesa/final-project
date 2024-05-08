@@ -24,6 +24,7 @@ function AllCourses() {
                         <p class="card-text">Professor: ${catalog[i].professor}</p>
                         <p class="card-text">Credits: ${catalog[i].credits}</p>
                         <p class="card-text">${catalog[i]. courseTag} | ${catalog[i]. sessions}</p>
+                        <button type="button">Favorite</button>
                     </div>
                 </div>`;
 
@@ -34,7 +35,8 @@ function AllCourses() {
     }
     return (
         <div>
-            <h1>Course Catalog</h1>
+            <h1>All Courses</h1>
+            <hr></hr>
             <div id="main-container"></div>
         </div>
     )
