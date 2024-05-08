@@ -76,16 +76,7 @@ export function AllViews() {
         }
         return (
             <div>
-                <h1>This is the course selection page.</h1>
                 <div id="main-container"></div>
-            </div>
-        )
-    }
-
-    function Grades() {
-        return (
-            <div> 
-                <h1>This is the grades viewing page.</h1>
             </div>
         )
     }
