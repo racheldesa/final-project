@@ -27,11 +27,30 @@ function Grades() {
     function DisplayGrades() {
         fetch(`http://localhost:4000/course1/${dataF.stuID}`)
             .then(response => response.json())
-            .then(grades => loadCourse1(grades));
+            .then(grades => loadGrades(grades));
 
-        function loadCourse1(grades) {
+        function loadGrades(grades) {
             var mainContainer = document.getElementById("main-container");
-            console.log(grades);    // test - log response to console
+            console.log(grades[0]);    // test - log response to console
+            
+            return (
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Assignment 1</th>
+                            <th>Assignment 2</th>
+                            <th>Assignment 3</th>
+                            <th>Exam 1</th>
+                            <th>Exam 2</th>
+                            <th>Final Exam</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td>{grades[0].assignment1}</td>
+                    </tbody>
+                </table>
+            )
+            
         }
         return (
             <div>
@@ -72,24 +91,6 @@ function Grades() {
                         </div>
                     </div>
                 </div>
-                    {/* <div class="btn-group">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="course1Btn">
-                            Course 1
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="course1Btn">
-                            <li class="dropdown-item">test</li>
-                        </div>
-                    </div> <br/>
-                    <div class="btn-group">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Course 2
-                        </button>
-                    </div> <br/>
-                    <div class="btn-group">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Course 3
-                        </button>
-                    </div> */}
             </div>
         );
     }
